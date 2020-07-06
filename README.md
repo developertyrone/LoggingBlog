@@ -19,7 +19,7 @@ The logging stack consists of five major components. These are:
 
 Don’t worry about the names, for now; we’ll cover what they do below. The main point here is that these five open source components chain together to facilitate all of OpenShift’s logging capabilities. Logging in OpenShift is a multistage process where log data is harvested from containers, nodes, and OpenShift itself, transported to a central location and stored/managed for later use. It’s helpful to think of the logging stack as a flow of events that feed into one another. 
 
-
+[![The Logging Stack Topology](https://github.com/ryandevlin-redhat/LoggingBlog/blob/master/openshift-logging-topology.png "Topology of the OpenShift Logging Stack.")](#)
 *__Figure 2:__ A topological view of the logging stack, in a typical configuration.*
 
 
@@ -35,6 +35,8 @@ The second part of the logging stack is the log collection. As mentioned before,
 Fluentd is deployed as a daemonset, which allows for a Fluentd pod to be deployed on every node in the cluster. Because of this, each node can aggregate all the logs produced by containers on that node. This ensures that no matter where a pod is deployed, it’s logs will be picked up by Fluentd. In a typical configuration, container logs are located at /var/log/ inside a container, or are collected by journald running in the container. OpenShift comes pre-configured to aggregate these logs, and store them in the following directory on the node:
 /var/log/containers/POD-NAME_NAMESPACE-NAME_CONTAINER-NAME-CONTAINER-ID.log 
 It is via this directory that a Fluentd pod running on the node picks up the logs and prepares them for transport. Upon collection, Fluentd injects extra metadata into the log files such as the namespace, pod name, and container name where the logs originated. This makes it easier to search through the logs, sorting by pod name or namespace, for instance. After collection, Fluentd automatically handles the process of sending the logs to Elasticsearch pods in the cluster for storage and management. Because of its role in log collection, Fluentd pod failures are among the first things administrators should check if logs are not appearing in Kibana.
+
+[![Fluentd and OpenShift Topology](https://github.com/ryandevlin-redhat/LoggingBlog/blob/master/fluentd-topology.png "Topology of Fluentd within OpenShift.")](#)
 *__Figure 3:__ Log collection. Keep in mind that a Fluentd pod runs on every node in the cluster.*
 
 ## Elasticsearch:
@@ -43,7 +45,7 @@ The next and most central piece of the logging stack is Elasticsearch, the compo
 ## Kibana:
 At the end of the chain of operations that comprise the logging stack is Kibana, a component that provides a GUI to view the logs. In a typical cluster, Kibana exists as a single pod that serves web pages via a URL provided by an OpenShift route. Under the hood, when a user interacts with the Kibana GUI, the pod issues API requests to the Elasticsearch pods to retrieve and display the logs in the indices. To locate the Kibana URL, an administrator can run oc get routes -n openshift-logging. When the Kibana URL is entered into a browser, the administrator can log into a GUI which presents the logs in a visual format and provides mechanics for sorting and searching the logs.
 
-
+[![Kibana Dashboard](https://github.com/ryandevlin-redhat/LoggingBlog/blob/master/Dashboard_example.png "A typical Kibana Dashboard.")](#)
 *__Figure 4:__ An example of a Kibana dashboard, for more information see here*
 
 
