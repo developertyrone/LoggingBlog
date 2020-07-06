@@ -61,8 +61,8 @@ This post was created to bring transparency to the logging stack so that new adm
 
 ## Next Steps:
 
-- Information on how to fully deploy OpenShift logging is located *[here](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html)*.
-- Documentation on Kibana, including how to create dashboards, can be found *[here](https://www.elastic.co/guide/en/kibana/current/index.html)*.
-- A deep dive on configuring Elasticsearch is covered *[here](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)*.
+- Information on how to fully deploy the OpenShift logging stack is located *[here](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html)*.
 - Fluentd documentation is found *[here](https://docs.fluentd.org/)*.
+- A deep dive on configuring Elasticsearch is covered *[here](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)*.
+- Documentation on Kibana, including how to create dashboards, can be found *[here](https://www.elastic.co/guide/en/kibana/current/index.html)*.
 - If you desire unique configuration or want to know more about how components have been integrated into OpenShift, you can find source code available *[here](https://github.com/openshift/origin-aggregated-logging)*.
