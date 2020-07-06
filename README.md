@@ -2,6 +2,7 @@
 
 July 6th, 2020 | by Ryan Devlin
 
+
 Figure 1: A typical logging stack configuration, courtesy of Unsplash
 
 Introduction:
@@ -52,8 +53,9 @@ Takeaways:
 This post was created to bring transparency to the logging stack so that new administrators can jumpstart their knowledge of how the logging components function. With a high-level understanding of how the logging stack works, administrators can diagnose problems faster and deploy these components more effectively.
 
 Next Steps:
-Information on how to fully deploy OpenShift logging is located [here](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html).
-Documentation on Kibana, including how to create dashboards, can be found [here](https://www.elastic.co/guide/en/kibana/current/index.html).
-A deep dive on configuring Elasticsearch is covered [here](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html).
-Fluentd documentation is found [here](https://docs.fluentd.org/).
-If you desire unique configuration or want to know more about how components have been integrated into OpenShift, you can find source code available [here](https://github.com/openshift/origin-aggregated-logging).
+
+- Information on how to fully deploy OpenShift logging is located *[here](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging.html)*.
+- Documentation on Kibana, including how to create dashboards, can be found *[here](https://www.elastic.co/guide/en/kibana/current/index.html)*.
+- A deep dive on configuring Elasticsearch is covered *[here](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)*.
+- Fluentd documentation is found *[here](https://docs.fluentd.org/)*.
+- If you desire unique configuration or want to know more about how components have been integrated into OpenShift, you can find source code available *[here](https://github.com/openshift/origin-aggregated-logging)*.
