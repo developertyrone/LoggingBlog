@@ -2,7 +2,7 @@
 
 July 6th, 2020 | by Ryan Devlin
 
-![Logging Stack](https://github.com/ryandevlin-redhat/LoggingBlog/blob/master/logging-unsplash.jpg "A typical logging stack.")
+[![Logging Stack](https://github.com/ryandevlin-redhat/LoggingBlog/blob/master/logging-unsplash.jpg "A typical logging stack.")](#)
 
 *__Figure 1:__ A typical logging stack configuration, courtesy of Unsplash*
 
